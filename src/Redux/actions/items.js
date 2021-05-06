@@ -23,7 +23,7 @@ export function fetchItems() {
   }
   
   export const createItemSuccess = response => ({
-    type: types.CREATE_ITEMS_SUCCESS,
+    type: types.CREATE_ITEM_SUCCESS,
     response: response
   });
   

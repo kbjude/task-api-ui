@@ -18,17 +18,17 @@ export function fetchItemDetails() {
     error
   });
   
-  export function createItemDetails(itemdetails) {
-    return { type: types.CREATE_ITEMDETAILS, itemdetails };
+  export function createItemDetail(itemdetail) {
+    return { type: types.CREATE_ITEMDETAIL, itemdetail };
   }
   
-  export const createItemDetailsSuccess = response => ({
-    type: types.CREATE_ITEMDETAILS_SUCCESS,
+  export const createItemDetailSuccess = response => ({
+    type: types.CREATE_ITEMDETAIL_SUCCESS,
     response: response
   });
   
-  export const createItemDetailsFailure = error => ({
-    type: types.CREATE_ITEMDETAILS_ERROR,
+  export const createItemDetailFailure = error => ({
+    type: types.CREATE_ITEMDETAIL_ERROR,
     error
   });
   
