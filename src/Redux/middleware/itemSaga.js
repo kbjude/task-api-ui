@@ -7,44 +7,33 @@ import {
   fetchItemsFailure
   
 } from "../actions/items";
-import apiErrorHandler from "../../services/apiErrorHandler";
+import apiErrorHandler from "../../Api/apiErrorHandler";
 
-export function* fetchJobsAsync(action) {
+export function* fetchItemsAsync(action) {
   try {
-    const response = yield call(JobAPI.fetch, action.searchParams);
-    yield put(fetchJobsSuccess(response.data));
+    const response = yield call(ItemAPI.fetch, action.searchParams);
+    yield put(fetchItemsSuccess(response.data));
   } catch (error) {
     const errorMessage = apiErrorHandler(error);
-    yield put(fetchJobsFailure(errorMessage));
+    yield put(fetchItemsFailure(errorMessage));
   }
 }
 
-export function* fetchJobDetailsAsync(action) {
+export function* createItemAsync(action) {
   try {
-    const response = yield call(JobAPI.fetchJob, action.jobId);
-    yield put(fetchJobDetailsSuccess(response.data));
-  } catch (error) {
-    console.log(error);
-    const errorMessage = apiErrorHandler(error);
-    yield put(fetchJobDetailsFailure(errorMessage));
-  }
-}
-
-export function* createJobAsync(action) {
-  try {
-    const response = yield call(JobAPI.createJob, action.job);
-    yield put(createJobSuccess(response.data));
+    const response = yield call(ItemAPI.createItem, action.item);
+    yield put(createItemSuccess(response.data));
   } catch (error) {
     console.log(error);
     const errorMessage = apiErrorHandler(error);
-    yield put(createJobFailure(errorMessage));
+    yield put(createItemFailure(errorMessage));
   }
 }
 
-export function* updateJobAsync(action) {
+export function* updateItemAsync(action) {
   try {
-    const response = yield call(JobAPI.editJob, action.job);
-    yield put(updateJobSuccess(response.data));
+    const response = yield call(ItemAPI.updateItem, action.item);
+    yield put(updateItemSuccess(response.data));
   } catch (error) {
     console.log(error);
     const errorMessage = apiErrorHandler(error);
@@ -52,18 +41,14 @@ export function* updateJobAsync(action) {
   }
 }
 
-export function* watchJobs() {
-  yield takeLatest(GET_JOBS, fetchJobsAsync);
+export function* watchItems() {
+  yield takeLatest(GET_ITEMS, fetchItemsAsync);
 }
 
-export function* watchJobDetails() {
-  yield takeLatest(GET_JOBS_DETAILS, fetchJobDetailsAsync);
+export function* watchCreateItem() {
+  yield takeLatest(CREATE_ITEM, createItemAsync);
 }
 
-export function* watchCreateJob() {
-  yield takeLatest(CREATE_JOB, createJobAsync);
-}
-
-export function* watchUpdateJob() {
-  yield takeLatest(UPDATE_JOB, updateJobAsync);
+export function* watchUpdateItem() {
+  yield takeLatest(UPDATE_ITEM, updateItemAsync);
 }
