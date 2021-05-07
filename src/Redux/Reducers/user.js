@@ -7,23 +7,23 @@ const initialState = {
   name: "",
 };
 
-export default function itemDetailsReducer(state = initialState, action) {
+export default function userReducer(state = initialState, action) {
   switch (action.type) {
-    case types.GET_ITEMDETAILS:
+    case types.GET_USERS:
       return { ...state, isLoading: true };
-    case types.GET_ITEMDETAILS_ERROR:
+    case types.GET_USERS_ERROR:
       return { ...state, error: action.error, isLoading: false };
-    case types.GET_ITEMDETAILS_SUCCESS:
+    case types.GET_USERS_SUCCESS:
       return {
         ...state,
-        itemdetails: action.itemdetails,
+        users: action.users,
         isLoading: false
       };
-    case types.CREATE_ITEMDETAIL:
+    case types.CREATE_USER:
       return { ...state, isLoading: true };
-    case types.CREATE_ITEMDETAILS_ERROR:
+    case types.CREATE_USERS_ERROR:
       return { ...state, error: action.error, isLoading: false };
-    case types.CREATE_ITEMDETAILS_SUCCESS:
+    case types.CREATE_USERS_SUCCESS:
       return {
         ...state,
         response: action.response,
