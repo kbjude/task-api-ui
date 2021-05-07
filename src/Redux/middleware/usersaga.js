@@ -22,7 +22,7 @@ export function* fetchUsersAsync(action) {
 export function* createUserAsync(action) {
   try {
     const response = yield call(UserAPI.createUser, action.user);
-    yield put(createIUserSuccess(response.data));
+    yield put(createUserSuccess(response.data));
   } catch (error) {
     console.log(error);
     const errorMessage = apiErrorHandler(error);

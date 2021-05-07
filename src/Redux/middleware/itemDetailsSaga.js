@@ -1,9 +1,9 @@
 import { browserHistory } from 'react-router';
 import { put, takeLatest, call } from "redux-saga/effects";
 import { GET_ITEMDETAILS, CREATE_ITEMDETAIL, GET_ITEMDETAILS, UPDATE_ITEMDETAIL } from "../actions/constants";
-import ItemApi from "../../Api";
+import ItemDetailsAPI from "../../Api";
 import {
-  fetchItemDetailssSuccess,
+  fetchItemDetailsSuccess,
   fetchItemDetailsFailure
   
 } from "../actions/item";
