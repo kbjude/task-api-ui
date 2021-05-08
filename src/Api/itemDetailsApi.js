@@ -36,4 +36,4 @@ class ItemDetailsAPI {
   }
 }
 
-export default ItemdetailAPI;
+export default ItemDetailsAPI;
