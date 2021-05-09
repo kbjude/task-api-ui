@@ -20,7 +20,7 @@ class UsersAPI {
 
   static createUser(user) {
     return axios.post(`${baseUrl}/api/users`, user );
-  }q
+  }
 
   static updateUser(user) {
     console.log(user);
