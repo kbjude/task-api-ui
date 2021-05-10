@@ -44,11 +44,11 @@ export function* updateItemDetailAsync(action) {
 }
 
 export function* watchItemdetails() {
-  yield takeLatest(GET_ITEMDETAILS, fetchItemdetailsAsync);
+  yield takeLatest(GET_ITEMDETAILS, fetchItemDetailsAsync);
 }
 
 export function* watchCreateItemdetail() {
-  yield takeLatest(CREATE_ITEMDETAIL, createItemdetailAsync);
+  yield takeLatest(CREATE_ITEMDETAIL, createItemDetailAsync);
 }
 
 export function* watchUpdateItemdetail() {
