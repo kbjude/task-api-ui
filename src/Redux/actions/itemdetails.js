@@ -31,3 +31,18 @@ export const createItemDetailFailure = (error) => ({
   type: types.CREATE_ITEMDETAIL_ERROR,
   error,
 });
+
+export function updateItemDetail(itemdetail) {
+  return { type: types.UPDATE_ITEMDETAIL, itemdetail };
+}
+
+export const updateItemDetailSuccess = (response) => ({
+  type: types.UPDATE_ITEMDETAIL_SUCCESS,
+  response,
+});
+
+export const updateItemDetailFailure = (error) => ({
+  type: types.UPDATE_ITEMDETAIL_ERROR,
+  error,
+});
+

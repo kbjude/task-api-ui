@@ -1,12 +1,15 @@
-import { browserHistory } from 'react-router';
-import { put, takeLatest, call } from "redux-saga/effects";
+import { put, takeLatest, call } from 'redux-saga/effects';
 import { GET_ITEMDETAILS, CREATE_ITEMDETAIL, UPDATE_ITEMDETAIL } from '../actions/constants';
 import ItemDetailsAPI from '../../Api';
 import {
   fetchItemDetailsSuccess,
   fetchItemDetailsFailure,
-} from "../actions/item";
-import apiErrorHandler from "../../Api/apiErrorHandler";
+  createItemDetailSuccess,
+  createItemDetailFailure,
+  updateItemDetailSuccess,
+  updateItemDetailFailure,
+} from '../actions/itemdetails';
+import apiErrorHandler from '../../Api/apiErrorHandler';
 
 export function* fetchItemDetailsAsync(action) {
   try {
@@ -20,7 +23,7 @@ export function* fetchItemDetailsAsync(action) {
 
 export function* createItemDetailAsync(action) {
   try {
-    const response = yield call(ItemDetailAPI.createItemDetail, action.itemdetail);
+    const response = yield call(ItemDetailsAPI.createItemDetail, action.itemdetail);
     yield put(createItemDetailSuccess(response.data));
   } catch (error) {
     console.log(error);
@@ -31,7 +34,7 @@ export function* createItemDetailAsync(action) {
 
 export function* updateItemDetailAsync(action) {
   try {
-    const response = yield call(ItemDetailAPI.updateItemDetail, action.itemdetail);
+    const response = yield call(ItemDetailsAPI.updateItemDetail, action.itemdetail);
     yield put(updateItemDetailSuccess(response.data));
   } catch (error) {
     console.log(error);
