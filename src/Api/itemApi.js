@@ -28,7 +28,6 @@ class ItemAPI {
 q
 
 static updateItem(item) {
-  console.log(item);
   browserHistory.push('/pathToRedirect');
   return axios.put(`${baseUrl}/api/items/${item.id}`, item);
 }
