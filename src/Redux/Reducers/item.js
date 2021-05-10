@@ -1,12 +1,12 @@
-import * as types from "../actions/actionTypes";
+import * as types from '../actions/actionTypes';
 
 const initialState = {
   isLoading: true,
-  error: "",
-  name: "",
-  descrption: "",
-  created_at: "",
-  updated_at: ""
+  error: '',
+  name: '',
+  descrption: '',
+  created_at: '',
+  updated_at: '',
 };
 
 export default function itemReducer(state = initialState, action) {
@@ -19,7 +19,7 @@ export default function itemReducer(state = initialState, action) {
       return {
         ...state,
         items: action.items,
-        isLoading: false
+        isLoading: false,
       };
     case types.CREATE_ITEM:
       return { ...state, isLoading: true };
@@ -31,7 +31,7 @@ export default function itemReducer(state = initialState, action) {
         response: action.response,
         isLoading: false,
         showModal: false,
-        error: ""
+        error: '',
       };
     default:
       return state;

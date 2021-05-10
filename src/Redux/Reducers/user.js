@@ -1,10 +1,9 @@
-
-import * as types from "../actions/actionTypes";
+import * as types from '../actions/actionTypes';
 
 const initialState = {
   isLoading: true,
-  error: "",
-  name: "",
+  error: '',
+  name: '',
 };
 
 export default function userReducer(state = initialState, action) {
@@ -17,7 +16,7 @@ export default function userReducer(state = initialState, action) {
       return {
         ...state,
         users: action.users,
-        isLoading: false
+        isLoading: false,
       };
     case types.CREATE_USER:
       return { ...state, isLoading: true };
@@ -29,7 +28,7 @@ export default function userReducer(state = initialState, action) {
         response: action.response,
         isLoading: false,
         showModal: false,
-        error: ""
+        error: '',
       };
     default:
       return state;

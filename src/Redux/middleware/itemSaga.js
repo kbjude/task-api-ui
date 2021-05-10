@@ -1,13 +1,13 @@
 import { browserHistory } from 'react-router';
-import { put, takeLatest, call } from "redux-saga/effects";
-import { GET_ITEMS, CREATE_ITEM, UPDATE_ITEM } from "../actions/constants";
-import ItemApi from "../../Api";
+import { put, takeLatest, call } from 'redux-saga/effects';
+import { GET_ITEMS, CREATE_ITEM, UPDATE_ITEM } from '../actions/constants';
+import ItemApi from '../../Api';
 import {
   fetchItemsSuccess,
-  fetchItemsFailure
-  
-} from "../actions/items";
-import apiErrorHandler from "../../Api/apiErrorHandler";
+  fetchItemsFailure,
+
+} from '../actions/items';
+import apiErrorHandler from '../../Api/apiErrorHandler';
 
 export function* fetchItemsAsync(action) {
   try {

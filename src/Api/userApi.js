@@ -1,15 +1,15 @@
-import axios from "axios";
-import resolveBaseUrl from ".";
+import axios from 'axios';
 import { browserHistory } from 'react-router';
+import resolveBaseUrl from '.';
 
 const baseUrl = resolveBaseUrl();
 
 class UsersAPI {
   static fetch(searchParams) {
     const {
-        isLoading = true,
-        error = "",
-        name = "",
+      isLoading = true,
+      error = '',
+      name = '',
     } = searchParams;
     return axios.get(`${baseUrl}/api/users/search?name=${name}`);
   }
@@ -19,12 +19,12 @@ class UsersAPI {
   }
 
   static createUser(user) {
-    return axios.post(`${baseUrl}/api/users`, user );
+    return axios.post(`${baseUrl}/api/users`, user);
   }
 
   static updateUser(user) {
     console.log(user);
-    browserHistory.push('/pathToRedirect')
+    browserHistory.push('/pathToRedirect');
     return axios.put(`${baseUrl}/api/users/${user.id}`, user);
   }
 

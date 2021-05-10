@@ -1,13 +1,13 @@
 import { browserHistory } from 'react-router';
-import { put, takeLatest, call } from "redux-saga/effects";
-import { GET_USERS, CREATE_USER, UPDATE_USER } from "../actions/constants";
-import UserApi from "../../Api";
+import { put, takeLatest, call } from 'redux-saga/effects';
+import { GET_USERS, CREATE_USER, UPDATE_USER } from '../actions/constants';
+import UserApi from '../../Api';
 import {
   fetchUsersSuccess,
-  fetchUsersFailure
-  
-} from "../actions/item";
-import apiErrorHandler from "../../Api/apiErrorHandler";
+  fetchUsersFailure,
+
+} from '../actions/item';
+import apiErrorHandler from '../../Api/apiErrorHandler';
 
 export function* fetchUsersAsync(action) {
   try {
