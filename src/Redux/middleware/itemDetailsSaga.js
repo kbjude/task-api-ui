@@ -1,11 +1,10 @@
 import { browserHistory } from 'react-router';
 import { put, takeLatest, call } from "redux-saga/effects";
-import { GET_ITEMDETAILS, CREATE_ITEMDETAIL, GET_ITEMDETAILS, UPDATE_ITEMDETAIL } from "../actions/constants";
-import ItemDetailsAPI from "../../Api";
+import { GET_ITEMDETAILS, CREATE_ITEMDETAIL, UPDATE_ITEMDETAIL } from '../actions/constants';
+import ItemDetailsAPI from '../../Api';
 import {
   fetchItemDetailsSuccess,
-  fetchItemDetailsFailure
-  
+  fetchItemDetailsFailure,
 } from "../actions/item";
 import apiErrorHandler from "../../Api/apiErrorHandler";
 
