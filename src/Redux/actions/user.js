@@ -23,11 +23,11 @@ export function createUser(user) {
 }
 
 export const createItemDetailSuccess = (response) => ({
-  type: types.CREATE_USER_SUCCESS,
+  type: types.CREATE_USERS_SUCCESS,
   response,
 });
 
 export const createUserFailure = (error) => ({
-  type: types.CREATE_USER_ERROR,
+  type: types.CREATE_USERS_ERROR,
   error,
 });
