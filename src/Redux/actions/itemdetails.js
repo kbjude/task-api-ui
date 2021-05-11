@@ -45,4 +45,3 @@ export const updateItemDetailFailure = (error) => ({
   type: types.UPDATE_ITEMDETAIL_ERROR,
   error,
 });
-

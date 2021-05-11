@@ -1,9 +1,11 @@
 import { put, takeLatest, call } from 'redux-saga/effects';
-import { GET_USERS, CREATE_USER, UPDATE_USER } from '../actions/constants';
+import { GET_USERS, CREATE_USER } from '../actions/constants';
 import UserAPI from '../../Api';
 import {
   fetchUsersSuccess,
   fetchUsersFailure,
+  createUsersSuccess,
+  createUsersFailure,
 
 } from '../actions/user';
 import apiErrorHandler from '../../Api/apiErrorHandler';
@@ -21,24 +23,24 @@ export function* fetchUsersAsync(action) {
 export function* createUserAsync(action) {
   try {
     const response = yield call(UserAPI.createUser, action.user);
-    yield put(createUserSuccess(response.data));
+    yield put(createUsersSuccess(response.data));
   } catch (error) {
     console.log(error);
     const errorMessage = apiErrorHandler(error);
-    yield put(createUserFailure(errorMessage));
+    yield put(createUsersFailure(errorMessage));
   }
 }
 
-export function* updateUserAsync(action) {
-  try {
-    const response = yield call(UserAPI.updateUser, action.user);
-    yield put(updateUserSuccess(response.data));
-  } catch (error) {
-    console.log(error);
-    const errorMessage = apiErrorHandler(error);
-    yield put(updateUserFailure(errorMessage));
-  }
-}
+// export function* updateUserAsync(action) {
+//   try {
+//     const response = yield call(UserAPI.updateUser, action.user);
+//     yield put(updateUserSuccess(response.data));
+//   } catch (error) {
+//     console.log(error);
+//     const errorMessage = apiErrorHandler(error);
+//     yield put(updateUserFailure(errorMessage));
+//   }
+// }
 
 export function* watchUsers() {
   yield takeLatest(GET_USERS, fetchUsersAsync);
@@ -48,6 +50,6 @@ export function* watchCreateUser() {
   yield takeLatest(CREATE_USER, createUserAsync);
 }
 
-export function* watchUpdateUser() {
-  yield takeLatest(UPDATE_USER, updateUserAsync);
-}
+// export function* watchUpdateUser() {
+//   yield takeLatest(UPDATE_USER, updateUserAsync);
+// }

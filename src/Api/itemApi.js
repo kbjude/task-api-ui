@@ -7,14 +7,14 @@ const baseUrl = resolveBaseUrl();
 class ItemAPI {
   static fetch(searchParams) {
     const {
-      isLoading = true,
-      error = '',
+      // isLoading = true,
+      // error = '',
       name = '',
       descrption = '',
-      created_at = '',
-      updated_at = '',
+      // created_at = '',
+      // updated_at = '',
     } = searchParams;
-    return axios.get(`${baseUrl}/api/items/search?name=${name}&descrption=${descrption}&created_at=${created_at}&updated_at=${updated_at}`);
+    return axios.get(`${baseUrl}/api/items/search?name=${name}&descrption=${descrption}`);
   }
 
   static fetchItem(id) {

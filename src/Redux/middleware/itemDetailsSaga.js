@@ -1,5 +1,5 @@
 import { put, takeLatest, call } from 'redux-saga/effects';
-import { GET_ITEMDETAILS, CREATE_ITEMDETAIL,  UPDATE_ITEMDETAIL } from '../actions/constants';
+import { GET_ITEMDETAILS, CREATE_ITEMDETAIL, UPDATE_ITEMDETAIL } from '../actions/constants';
 import ItemDetailsAPI from '../../Api';
 import {
   fetchItemDetailsSuccess,
@@ -22,7 +22,7 @@ export function* fetchItemDetailsAsync(action) {
 }
 
 export function* createItemDetailAsync(action) {
-  try { 
+  try {
     const response = yield call(ItemDetailsAPI.createItemDetail, action.itemdetail);
     yield put(createItemDetailSuccess(response.data));
   } catch (error) {

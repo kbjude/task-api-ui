@@ -6,7 +6,7 @@ const resolveBaseUrl = () => {
   const baseUrl = ['test', 'development'].includes(env)
     ? testUrl
     : process.env.REACT_APP_API_URL;
-
+  console.log(baseUrl);
   return testUrl;
 };
 

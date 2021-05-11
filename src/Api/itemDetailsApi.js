@@ -7,14 +7,14 @@ const baseUrl = resolveBaseUrl();
 class ItemDetailsAPI {
   static fetch(searchParams) {
     const {
-      isLoading = true,
-      error = '',
+      // isLoading = true,
+      // error = '',
       hoursspent = '',
       minutes = '',
       description = '',
-      item_id = '',
+      itemId = '',
     } = searchParams;
-    return axios.get(`${baseUrl}/api/itemdetails/search?hoursspent=${hoursspent}&minutes=${minutes}&description=${description}&item_id=${item_id}`);
+    return axios.get(`${baseUrl}/api/itemdetails/search?hoursspent=${hoursspent}&minutes=${minutes}&description=${description}&item_id=${itemId}`);
   }
 
   static fetchItemdetail(id) {
@@ -28,7 +28,6 @@ class ItemDetailsAPI {
 q
 
 static updateItemdetail(itemdetail) {
-  console.log(itemdetail);
   browserHistory.push('/pathToRedirect');
   return axios.put(`${baseUrl}/api/itemdetails/${itemdetail.id}`, itemdetail);
 }

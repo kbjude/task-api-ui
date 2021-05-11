@@ -7,8 +7,8 @@ const baseUrl = resolveBaseUrl();
 class UsersAPI {
   static fetch(searchParams) {
     const {
-      isLoading = true,
-      error = '',
+      // isLoading = true,
+      // error = '',
       name = '',
     } = searchParams;
     return axios.get(`${baseUrl}/api/users/search?name=${name}`);
