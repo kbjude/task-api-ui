@@ -18,7 +18,7 @@ export const fetchItemDetailsFailure = (error) => ({
   error,
 });
 
-export function createItemDetail(itemdetail) {
+export function createItemDetails(itemdetail) {
   return { type: types.CREATE_ITEMDETAIL, itemdetail };
 }
 

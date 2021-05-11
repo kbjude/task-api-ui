@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import axios from 'axios';
-import rootReducer from './reducers';
+import rootReducer from './Reducers/index';
 import rootSaga from './middleware';
 
 export default function configureStore(initialState) {

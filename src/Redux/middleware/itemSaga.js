@@ -1,4 +1,3 @@
-import { browserHistory } from 'react-router';
 import { put, takeLatest, call } from 'redux-saga/effects';
 import { GET_ITEMS, CREATE_ITEM, UPDATE_ITEM } from '../actions/constants';
 import ItemAPI from '../../Api';

@@ -1,4 +1,4 @@
-import * as types from '../actions/actionTypes';
+import * as types from '../actions/constants';
 
 const initialState = {
   isLoading: true,
@@ -23,9 +23,9 @@ export default function itemDetailsReducer(state = initialState, action) {
       };
     case types.CREATE_ITEMDETAIL:
       return { ...state, isLoading: true };
-    case types.CREATE_ITEMDETAILS_ERROR:
+    case types.CREATE_ITEMDETAIL_ERROR:
       return { ...state, error: action.error, isLoading: false };
-    case types.CREATE_ITEMDETAILS_SUCCESS:
+    case types.CREATE_ITEMDETAIL_SUCCESS:
       return {
         ...state,
         response: action.response,
