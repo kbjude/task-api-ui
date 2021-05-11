@@ -23,9 +23,9 @@ export default function itemReducer(state = initialState, action) {
       };
     case types.CREATE_ITEM:
       return { ...state, isLoading: true };
-    case types.CREATE_ITEMS_ERROR:
+    case types.CREATE_ITEM_ERROR:
       return { ...state, error: action.error, isLoading: false };
-    case types.CREATE_ITEMS_SUCCESS:
+    case types.CREATE_ITEM_SUCCESS:
       return {
         ...state,
         response: action.response,
