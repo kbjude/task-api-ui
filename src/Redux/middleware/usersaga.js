@@ -6,7 +6,6 @@ import {
   fetchUsersFailure,
   createUsersSuccess,
   createUsersFailure,
-
 } from '../actions/user';
 import apiErrorHandler from '../../Api/apiErrorHandler';
 

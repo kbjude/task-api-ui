@@ -1,7 +1,7 @@
 import { all } from 'redux-saga/effects';
 import { watchItemdetails, watchCreateItemdetail, watchUpdateItemdetail } from './itemDetailsSaga';
 import { watchCreateUser, watchUsers } from './userSaga';
-import { watchItems, watchCreateItem, watchUpdateItem } from './itemSaga';
+import { watchItems, watchCreateItem } from './itemSaga';
 
 function* rootSaga() {
   yield all([
@@ -13,7 +13,7 @@ function* rootSaga() {
     watchUpdateItemdetail(),
     watchItems(),
     watchCreateItem(),
-    watchUpdateItem(),
+    // watchUpdateItem(),
   ]);
 }
 

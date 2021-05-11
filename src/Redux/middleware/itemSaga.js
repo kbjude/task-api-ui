@@ -1,10 +1,11 @@
 import { put, takeLatest, call } from 'redux-saga/effects';
-import { GET_ITEMS, CREATE_ITEM, UPDATE_ITEM } from '../actions/constants';
+import { GET_ITEMS, CREATE_ITEM } from '../actions/constants';
 import ItemAPI from '../../Api';
 import {
   fetchItemsSuccess,
   fetchItemsFailure,
-
+  createItemSuccess,
+  createItemFailure,
 } from '../actions/items';
 import apiErrorHandler from '../../Api/apiErrorHandler';
 
@@ -29,16 +30,16 @@ export function* createItemAsync(action) {
   }
 }
 
-export function* updateItemAsync(action) {
-  try {
-    const response = yield call(ItemAPI.updateItem, action.item);
-    yield put(updateItemSuccess(response.data));
-  } catch (error) {
-    console.log(error);
-    const errorMessage = apiErrorHandler(error);
-    yield put(updateJobFailure(errorMessage));
-  }
-}
+// export function* updateItemAsync(action) {
+//   try {
+//     const response = yield call(ItemAPI.updateItem, action.item);
+//     yield put(updateItemSuccess(response.data));
+//   } catch (error) {
+//     console.log(error);
+//     const errorMessage = apiErrorHandler(error);
+//     yield put(updateJobFailure(errorMessage));
+//   }
+// }
 
 export function* watchItems() {
   yield takeLatest(GET_ITEMS, fetchItemsAsync);
@@ -48,6 +49,6 @@ export function* watchCreateItem() {
   yield takeLatest(CREATE_ITEM, createItemAsync);
 }
 
-export function* watchUpdateItem() {
-  yield takeLatest(UPDATE_ITEM, updateItemAsync);
-}
+// export function* watchUpdateItem() {
+//   yield takeLatest(UPDATE_ITEM, updateItemAsync);
+// }
