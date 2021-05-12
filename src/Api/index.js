@@ -1,7 +1,5 @@
 const resolveBaseUrl = () => {
-    //eslint-disable-line
-  // const testUrl = "https://api.tukole.ug";
-  const testUrl = 'https://tukole-api-test.innovationvillage.co.ug';
+  const testUrl = 'http://localhost:3000';
   const env = process.env.NODE_ENV;
   const baseUrl = ['test', 'development'].includes(env)
     ? testUrl
