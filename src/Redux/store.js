@@ -15,6 +15,7 @@ export default function configureStore(initialState) {
       applyMiddleware(reduxImmutableStateInvariant(), sagaMiddleware),
     ),
   );
+
   const token = localStorage.getItem('token');
   if (token != null) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
