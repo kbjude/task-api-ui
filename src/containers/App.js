@@ -4,7 +4,7 @@
 import '../style/App.css';
 
 function App() {
-  console.log("we are here")
+  console.log('we are here');
   return (
     <div className="App">
       <h1> Testing </h1>
