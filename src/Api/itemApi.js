@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { browserHistory } from 'react-router';
 import resolveBaseUrl from '.';
 
 const baseUrl = resolveBaseUrl();
@@ -28,7 +27,7 @@ class ItemAPI {
 q
 
 static updateItem(item) {
-  browserHistory.push('/pathToRedirect');
+  // browserHistory.push('/pathToRedirect');
   return axios.put(`${baseUrl}/api/items/${item.id}`, item);
 }
 

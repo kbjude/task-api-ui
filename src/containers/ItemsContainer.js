@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 // import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 // import styled from 'styled-components';
@@ -16,7 +16,7 @@ function ItemsContainer() {
 
   return (
     <>
-      {items && items.map((item) => (
+      {items.item && items.item.map((item) => (
         <Items
           key={item.id}
           id={item.id}
