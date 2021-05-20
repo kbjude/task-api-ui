@@ -1,17 +1,31 @@
+import axios from 'axios';
 import React, { useEffect } from 'react';
 // import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 // import styled from 'styled-components';
 // import store from '../Redux/store';
-import fetchItems from '../Api/itemApi';
+// import fetchItems from '../Api/itemApi';
 import Items from '../components/Items';
+import { fetchItems } from '../Redux/actions/items';
 
-function ItemsContainer() {
+const ItemsContainer = () => {
   const { items } = useSelector((state) => state);
   const dispatch = useDispatch();
+  console.log(items);
+
+  const fetchItemList = async () => {
+    const response = await axios
+      .get('http://fakestoreapi.com/products')
+      .catch((err) => {
+        console.log('Err', err);
+      });
+    dispatch(fetchItems(response.data));
+    console.log(response.data);
+  };
 
   useEffect(() => {
-    dispatch(fetchItems());
+    fetchItemList();
+    // dispatch(fetchItems());
   }, []);
 
   return (
@@ -26,7 +40,7 @@ function ItemsContainer() {
       ))}
     </>
   );
-}
+};
 
 ItemsContainer.propTypes = {
 

@@ -24,16 +24,14 @@ class ItemAPI {
     return axios.post(`${baseUrl}/api/items`, item);
   }
 
-q
+  static updateItem(item) {
+    // browserHistory.push('/pathToRedirect');
+    return axios.put(`${baseUrl}/api/items/${item.id}`, item);
+  }
 
-static updateItem(item) {
-  // browserHistory.push('/pathToRedirect');
-  return axios.put(`${baseUrl}/api/items/${item.id}`, item);
-}
-
-static deleteItem(id) {
-  return axios.delete(`${baseUrl}/api/item/${id}`);
-}
+  static deleteItem(id) {
+    return axios.delete(`${baseUrl}/api/item/${id}`);
+  }
 }
 
 export default ItemAPI;
