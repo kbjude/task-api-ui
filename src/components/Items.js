@@ -1,13 +1,15 @@
 import React, { useSelector } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const Items = ({
-  id, name, description, path,
-}) => {
-  const { items } = useSelector((state) => state.items);
-  console.log(`List,${items}`);
-    <div>
+const Items = () => {
+  const items = useSelector((state) => state);
+  const {
+    id, name, description, path,
+  } = items;
+  console.log(`${items}`);
+  return (
+    <div key={id}>
       <Link to={path}>
         <h5>
           {' '}
@@ -25,14 +27,15 @@ const Items = ({
           {' '}
         </h5>
       </Link>
-    </div>;
+    </div>
+  );
 };
 
-Items.propTypes = {
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  path: PropTypes.string.isRequired,
-};
+// Items.propTypes = {
+//   id: PropTypes.string.isRequired,
+//   name: PropTypes.string.isRequired,
+//   description: PropTypes.string.isRequired,
+//   path: PropTypes.string.isRequired,
+// };
 
 export default Items;
