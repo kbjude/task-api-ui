@@ -3,7 +3,7 @@ import * as types from './constants';
 export function fetchItems(response) {
   return {
     type: types.GET_ITEMS,
-    items: response,
+    payload: response,
   };
 }
 

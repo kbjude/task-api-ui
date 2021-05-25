@@ -7,7 +7,6 @@ const initialState = {
   description: '',
   created_at: '',
   updated_at: '',
-  items: [],
 };
 
 // export default function itemReducer(state = initialState, action) {

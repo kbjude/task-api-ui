@@ -10,7 +10,7 @@ import { fetchItems } from '../Redux/actions/items';
 
 const ItemsContainer = () => {
   const dispatch = useDispatch();
-  const items = useSelector((state) => state);
+  const items = useSelector((state) => state.items);
   const fetchItemList = async () => {
     const response = await axios
       .get('http://fakestoreapi.com/products')
@@ -18,7 +18,6 @@ const ItemsContainer = () => {
         console.log('Err', err);
       });
     dispatch(fetchItems(response.data));
-    dispatch(fetchItems('Testing the dispatch'));
     console.log(response.data);
   };
 
