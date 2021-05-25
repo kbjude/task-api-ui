@@ -34,7 +34,7 @@ const ItemsContainer = () => {
         <Items
           key={item.id}
           id={item.id}
-          name={item.name}
+          name={item.title}
           description={item.description}
         />
       ))}

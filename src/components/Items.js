@@ -2,11 +2,9 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const Items = (props) => {
-  // const items = useSelector((state) => state);
   const {
     id, name, description, path,
   } = props;
-  // console.log(`${items}`);
   return (
     <div key={id}>
       <Link to={path}>
