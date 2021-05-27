@@ -1,7 +1,7 @@
 import * as types from './constants';
 
 export function fetchItemDetails() {
-  return { type: types.GET_ITEMS };
+  return { type: types.GET_ITEMDETAILS };
 }
 
 export function validationError(error) {

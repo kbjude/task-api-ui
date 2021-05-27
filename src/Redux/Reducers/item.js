@@ -38,7 +38,7 @@ const initialState = {
 //   }
 // }
 
-const itemReducer = (state = initialState, { type, payload }) => {
+export const itemReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case types.GET_ITEMS:
       return { ...state, items: payload };
@@ -46,4 +46,12 @@ const itemReducer = (state = initialState, { type, payload }) => {
       return state;
   }
 };
-export default itemReducer;
+
+export const itemDetailReducer = (state = {}, { type, payload }) => {
+  switch (type) {
+    case types.GET_ITEMDETAILS:
+      return { ...state, ...payload };
+    default:
+      return state;
+  }
+};

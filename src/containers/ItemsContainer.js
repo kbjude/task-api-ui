@@ -10,7 +10,8 @@ import { fetchItems } from '../Redux/actions/items';
 
 const ItemsContainer = () => {
   const dispatch = useDispatch();
-  const items = useSelector((state) => state.items);
+  const items = useSelector((state) => state.itemReducer);
+
   const fetchItemList = async () => {
     const response = await axios
       .get('http://fakestoreapi.com/products')
@@ -23,7 +24,6 @@ const ItemsContainer = () => {
 
   useEffect(() => {
     fetchItemList();
-    // dispatch(fetchItems());
   }, []);
 
   console.log(items);
@@ -36,6 +36,7 @@ const ItemsContainer = () => {
           id={item.id}
           name={item.title}
           description={item.description}
+          path={`/items/itemdetails/${item.id}`}
         />
       ))}
     </>
