@@ -36,7 +36,7 @@ const ItemsContainer = () => {
           id={item.id}
           name={item.title}
           description={item.description}
-          path={`/items/itemdetails/${item.id}`}
+          path={`/items/${item.id}`}
         />
       ))}
     </>

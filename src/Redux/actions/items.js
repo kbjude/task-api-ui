@@ -7,6 +7,11 @@ export function fetchItems(response) {
   };
 }
 
+export const selectedDetailAction = (item) => ({
+  type: types.SELECTED_ITEM,
+  payload: item,
+});
+
 export function validationError(error) {
   return { type: types.ERROR, error };
 }
@@ -33,9 +38,4 @@ export const createItemSuccess = (response) => ({
 export const createItemFailure = (error) => ({
   type: types.CREATE_ITEMS_ERROR,
   error,
-});
-
-export const selectedDetailAction = (items) => ({
-  type: types.GET_ITEMDETAILS,
-  payload: items,
 });

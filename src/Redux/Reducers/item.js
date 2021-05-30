@@ -49,7 +49,7 @@ export const itemReducer = (state = initialState, { type, payload }) => {
 
 export const itemDetailReducer = (state = {}, { type, payload }) => {
   switch (type) {
-    case types.GET_ITEMDETAILS:
+    case types.SELECTED_ITEM:
       return { ...state, ...payload };
     default:
       return state;

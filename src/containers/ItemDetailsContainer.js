@@ -8,31 +8,42 @@ import ItemDetails from '../components/ItemDetails';
 
 const ItemDetailsContainer = () => {
   const item = useSelector((state) => state.item);
-  const { itemId } = useParams();
+  // const {
+  //   title, category, price, description, id,
+  // } = item;
   const dispatch = useDispatch();
-  console.log(itemId);
-  console.log(item);
+  const {
+    id, title, description, category, price,
+  } = useParams();
+  console.log(id);
+  console.log(`This is the first id ${useParams()}`);
+  console.log(`The ID is, ${id}`);
+  console.log(`They are good, ${item}`);
 
   const fetchItemDetails = async () => {
     const response = await axios
-      .get(`https://fakestoreapi.com/items/${itemId}`)
+      .get(`https://fakestoreapi.com/products/${id}`)
       .catch((err) => {
         console.log('Err ', err);
       });
-    dispatch(selectedDetailAction(response.data));
+    dispatch(selectedDetailAction(response));
+    console.log(`The call data, ${response}`);
   };
 
   useEffect(() => () => {
-    if (itemId && itemId !== '') fetchItemDetails();
-  }, [itemId]);
+    if (id && id !== '') fetchItemDetails();
+    // console.log(itemId);
+  }, [id]);
   return (
-    <div classNam>
+    <div>
       <h1> Item Details </h1>
       <ItemDetails
-        key={item.id}
-        id={item.id}
-        name={item.title}
-        description={item.description}
+        key={id}
+        id={id}
+        name={title}
+        description={description}
+        category={category}
+        price={price}
       />
     </div>
   );
