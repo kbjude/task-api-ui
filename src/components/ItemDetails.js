@@ -11,26 +11,26 @@ const ItemDetails = (props) => {
         {id}
         {' '}
       </h5>
+      <h3>Item Name</h3>
       <h5>
-        Item Name
         {' '}
         {name}
         {' '}
       </h5>
+      <h3>Description</h3>
       <h5>
-        Description
         {' '}
         {description}
         {' '}
       </h5>
+      <h3>Category</h3>
       <h5>
-        Category
         {' '}
         {category}
         {' '}
       </h5>
+      <h3>Price</h3>
       <h5>
-        Price
         {' '}
         {price}
         {' '}

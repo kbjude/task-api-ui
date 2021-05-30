@@ -12,9 +12,10 @@ const ItemDetailsContainer = () => {
   //   title, category, price, description, id,
   // } = item;
   const dispatch = useDispatch();
+  const { id } = useParams();
   const {
-    id, title, description, category, price,
-  } = useParams();
+    title, description, category, price,
+  } = item;
   console.log(id);
   console.log(`This is the first id ${useParams()}`);
   console.log(`The ID is, ${id}`);
@@ -26,8 +27,8 @@ const ItemDetailsContainer = () => {
       .catch((err) => {
         console.log('Err ', err);
       });
-    dispatch(selectedDetailAction(response));
-    console.log(`The call data, ${response}`);
+    dispatch(selectedDetailAction(response.data));
+    console.log(`The call data, ${response.data}`);
   };
 
   useEffect(() => () => {
