@@ -18,16 +18,16 @@ export const fetchItemsFailure = (error) => ({
   error,
 });
 
-export function createItem(item) {
-  return { type: types.CREATE_ITEM, item };
+export function setItems(item) {
+  return { type: types.SET_ITEMS, item };
 }
 
-export const createItemSuccess = (response) => ({
-  type: types.CREATE_ITEM_SUCCESS,
+export const setItemSuccess = (response) => ({
+  type: types.SET_ITEMS_SUCCESS,
   response,
 });
 
-export const createItemFailure = (error) => ({
-  type: types.CREATE_ITEMS_ERROR,
+export const setItemFailure = (error) => ({
+  type: types.SET_ITEMS_ERROR,
   error,
 });

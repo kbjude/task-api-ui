@@ -8,6 +8,10 @@ export const OTP_FAILURE = 'OTP_FAILURE';
 export const FETCH_OTP = 'FETCH_OTP';
 export const LOGIN_OTP = 'LOGIN_OTP';
 
+export const SET_ITEMS = 'SET_ITEMS';
+export const SET_ITEMS_SUCCESS = 'SET_ITEMS_SUCCESS';
+export const SET_ITEMS_ERROR = 'SET_ITEMS_ERROR';
+
 export const GET_ITEMS = 'GET_ITEMS';
 export const GET_ITEMS_SUCCESS = 'GET_ITEMS_SUCCESS';
 export const GET_ITEMS_ERROR = 'GET_ITEMS_ERROR';

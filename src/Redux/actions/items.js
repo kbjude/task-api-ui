@@ -12,6 +12,11 @@ export const selectedDetailAction = (item) => ({
   payload: item,
 });
 
+export const setItems = (item) => ({
+  type: types.SET_ITEMS,
+  payload: item,
+});
+
 export function validationError(error) {
   return { type: types.ERROR, error };
 }
@@ -36,6 +41,6 @@ export const createItemSuccess = (response) => ({
 });
 
 export const createItemFailure = (error) => ({
-  type: types.CREATE_ITEMS_ERROR,
+  type: types.CREATE_ITEM_ERROR,
   error,
 });
