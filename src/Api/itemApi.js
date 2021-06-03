@@ -1,8 +1,9 @@
 import axios from 'axios';
 
-export function getItems() {
+function getItems() {
   return axios.request({
     method: 'get',
     url: 'http://fakestoreapi.com/products',
   });
 }
+export default getItems;
