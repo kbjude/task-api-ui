@@ -13,7 +13,7 @@ export const selectedDetailAction = (item) => ({
 });
 
 export const setItems = (item) => ({
-  type: types.SELECTED_ITEM,
+  type: types.SET_ITEMS,
   payload: item,
 });
 
