@@ -1,7 +1,7 @@
 import { put, takeLatest, call } from 'redux-saga/effects';
 import { SET_ITEMS } from '../actions/constants';
 import { getItems } from '../../Api/itemApi';
-import { setItems } from '../Reducers/actions22/items';
+import { setItems } from '../actions/items';
 
 export function* handleGetItems(action) {
   try {
