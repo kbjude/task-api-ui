@@ -18,16 +18,13 @@ export const fetchItemsFailure = (error) => ({
   error,
 });
 
-export function setItems(item) {
-  return { type: types.SET_ITEMS, item };
-}
-
+export const setItems = (item) => ({ type: types.SET_ITEMS, item });
 export const setItemSuccess = (response) => ({
   type: types.SET_ITEMS_SUCCESS,
-  response,
+  items: response,
 });
 
-export const setItemFailure = (error) => ({
+export const setItemsFailure = (error) => ({
   type: types.SET_ITEMS_ERROR,
   error,
 });
