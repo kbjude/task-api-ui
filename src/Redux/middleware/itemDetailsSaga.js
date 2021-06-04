@@ -13,6 +13,6 @@ export function* handleGetItemDetails() {
   }
 }
 
-export function* watchSetItems() {
+export function* watchSetItemDetails() {
   yield takeLatest(GET_ITEMS, handleGetItemDetails);
 }

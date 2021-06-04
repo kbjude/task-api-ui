@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectedDetailAction } from '../Redux/actions/itemdetails';
+import { setItemDetails } from '../Redux/actions/itemdetails';
 import ItemDetails from '../components/ItemDetails';
 
 const ItemDetailsContainer = () => {
@@ -9,10 +9,11 @@ const ItemDetailsContainer = () => {
   const dispatch = useDispatch();
 
   useEffect(() => () => {
-    if (id && id !== '') dispatch(selectedDetailAction());
-  }, [id]);
+    if (id && id !== '') dispatch(setItemDetails());
+  }, [dispatch]);
 
   const item = useSelector((state) => state.item);
+  console.log(useParams());
   const {
     title, description, category, price,
   } = item;

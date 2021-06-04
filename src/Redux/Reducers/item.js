@@ -18,7 +18,7 @@ export const itemReducer = (state = initialState, { type, payload }) => {
   }
 };
 
-export const itemDetailReducer = (state = {}, { type, payload }) => {
+export const itemDetailReducer1 = (state = {}, { type, payload }) => {
   switch (type) {
     case types.SELECTED_ITEM:
       return { ...state, ...payload };

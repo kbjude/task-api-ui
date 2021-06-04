@@ -3,37 +3,21 @@ import * as types from '../actions/constants';
 const initialState = {
   isLoading: true,
   error: '',
-  hoursspent: '',
-  minutes: '',
+  id: '',
+  name: '',
   description: '',
-  item_id: '',
+  created_at: '',
+  updated_at: '',
 };
 
-export default function itemDetailsReducer(state = initialState, action) {
-  switch (action.type) {
-    case types.GET_ITEMDETAILS:
-      return { ...state, isLoading: true };
-    case types.GET_ITEMDETAILS_ERROR:
-      return { ...state, error: action.error, isLoading: false };
-    case types.GET_ITEMDETAILS_SUCCESS:
-      return {
-        ...state,
-        itemdetails: action.itemdetails,
-        isLoading: false,
-      };
-    case types.CREATE_ITEMDETAIL:
-      return { ...state, isLoading: true };
-    case types.CREATE_ITEMDETAIL_ERROR:
-      return { ...state, error: action.error, isLoading: false };
-    case types.CREATE_ITEMDETAIL_SUCCESS:
-      return {
-        ...state,
-        response: action.response,
-        isLoading: false,
-        showModal: false,
-        error: '',
-      };
+const itemDetailReducer = (state = initialState, { type, payload }) => {
+  switch (type) {
+    case types.SELECTED_ITEMDETAIL:
+      console.log(state.items);
+      return { ...state, ...payload };
     default:
       return state;
   }
-}
+};
+
+export default itemDetailReducer;
