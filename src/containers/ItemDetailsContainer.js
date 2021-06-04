@@ -5,16 +5,18 @@ import { selectedDetailAction } from '../Redux/actions/itemdetails';
 import ItemDetails from '../components/ItemDetails';
 
 const ItemDetailsContainer = () => {
-  const item = useSelector((state) => state.item);
   const { id } = useParams;
   const dispatch = useDispatch();
-  const {
-    title, description, category, price,
-  } = item;
 
   useEffect(() => () => {
     if (id && id !== '') dispatch(selectedDetailAction());
   }, [id]);
+
+  const item = useSelector((state) => state.item);
+  const {
+    title, description, category, price,
+  } = item;
+
   return (
     <div>
       <h1> Item Details </h1>
