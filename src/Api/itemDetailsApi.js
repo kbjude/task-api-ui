@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
-function getItems() {
+function getItemDetails() {
   const { id } = useParams;
 
   return axios.request({
@@ -9,4 +9,4 @@ function getItems() {
     url: `http://fakestoreapi.com/products/${id}`,
   });
 }
-export default getItems;
+export default getItemDetails;

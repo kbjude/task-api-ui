@@ -18,9 +18,24 @@ export const fetchItemDetailsFailure = (error) => ({
   error,
 });
 
-export const selectedDetailAction = (item) => ({
-  type: types.SELECTED_ITEM,
-  payload: item,
+export const selectedDetailAction = (itemdetail) => ({
+  type: types.SELECTED_ITEMDETAIL,
+  payload: itemdetail,
+});
+
+export const setItemDetails = (itemdetail) => ({
+  type: types.SET_ITEMDETAILS,
+  payload: itemdetail,
+});
+
+export const setItemDetailsSuccess = (response) => ({
+  type: types.SET_ITEMDETAILS_SUCCESS,
+  items: response,
+});
+
+export const setItemDetailsFailure = (error) => ({
+  type: types.SET_ITEMDETAILS_ERROR,
+  error,
 });
 
 export function createItemDetails(itemdetail) {
