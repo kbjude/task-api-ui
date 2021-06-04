@@ -13,8 +13,6 @@ export const itemReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case types.SET_ITEMS:
       return { ...state, items: payload };
-    case types.GET_ITEMS:
-      return { ...state, items: payload };
     default:
       return state;
   }
