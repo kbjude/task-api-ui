@@ -18,6 +18,11 @@ export const fetchItemDetailsFailure = (error) => ({
   error,
 });
 
+export const selectedDetailAction = (item) => ({
+  type: types.SELECTED_ITEM,
+  payload: item,
+});
+
 export function createItemDetails(itemdetail) {
   return { type: types.CREATE_ITEMDETAIL, itemdetail };
 }
