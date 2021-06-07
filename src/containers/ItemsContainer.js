@@ -16,8 +16,6 @@ const ItemsContainer = () => {
 
   const items = useSelector((state) => state.itemReducer);
 
-  console.log(items);
-
   return (
     <>
       {items.items && items.items.map((item) => (

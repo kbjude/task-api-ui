@@ -6,7 +6,7 @@ import itemDetailReducer from './itemDetails';
 const rootReducer = combineReducers({
   users,
   itemReducer,
-  item: itemDetailReducer,
+  itemDetailReducer,
 });
 
 export default rootReducer;

@@ -7,10 +7,10 @@ export function fetchItems(response) {
   };
 }
 
-export const selectedDetailAction = (item) => ({
-  type: types.SELECTED_ITEM,
-  payload: item,
-});
+// export const selectedDetailAction = (item) => ({
+//   type: types.SELECTED_ITEM,
+//   payload: item,
+// });
 
 export const setItems = (item) => ({
   type: types.SET_ITEMS,

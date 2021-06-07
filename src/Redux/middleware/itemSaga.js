@@ -8,6 +8,7 @@ export function* handleGetItems() {
     const response = yield call(getItems);
     const { data } = response;
     yield put(setItems(data));
+    console.log(data);
   } catch (error) {
     console.log(error);
   }

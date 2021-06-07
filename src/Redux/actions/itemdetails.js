@@ -1,16 +1,20 @@
 import * as types from './constants';
 
-export function fetchItemDetails() {
-  return { type: types.GET_ITEMDETAILS };
+export function fetchItemDetails(id) {
+  console.log('Doing the test');
+  return {
+    type: types.GET_ITEMDETAILS,
+    id,
+  };
 }
 
 export function validationError(error) {
   return { type: types.ERROR, error };
 }
 
-export const fetchItemDetailsSuccess = (response) => ({
+export const fetchItemDetailsSuccess = (itemdetail) => ({
   type: types.GET_ITEMDETAILS_SUCCESS,
-  items: response,
+  payload: itemdetail,
 });
 
 export const fetchItemDetailsFailure = (error) => ({

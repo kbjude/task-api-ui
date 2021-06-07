@@ -12,7 +12,7 @@ const initialState = {
 
 const itemDetailReducer = (state = initialState, { type, payload }) => {
   switch (type) {
-    case types.SELECTED_ITEMDETAIL:
+    case types.SET_ITEMDETAILS:
       console.log(state.items);
       return { ...state, ...payload };
     default:
