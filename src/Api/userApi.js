@@ -1,36 +1,30 @@
 import axios from 'axios';
-import { browserHistory } from 'react-router';
-import resolveBaseUrl from '.';
 
-const baseUrl = resolveBaseUrl();
+const API_URL = 'http://localhost:3000';
 
-class UsersAPI {
-  static fetch(searchParams) {
-    const {
-      // isLoading = true,
-      // error = '',
-      name = '',
-    } = searchParams;
-    return axios.get(`${baseUrl}/api/users/search?name=${name}`);
-  }
+const register = (username, email, password) => axios.post(`${API_URL}signup`, {
+  username,
+  email,
+  password,
+});
 
-  static fetchUsers(id) {
-    return axios.get(`${baseUrl}/api/users/${id}`);
-  }
+const login = (username, password) => axios.post(`${API_URL}signin`, {
+  username,
+  password,
+})
+  .then((response) => {
+    if (response.data.accessToken) {
+      localStorage.setItem('user', JSON.stringify(response.data));
+    }
+    return response.data;
+  });
 
-  static createUser(user) {
-    return axios.post(`${baseUrl}/api/users`, user);
-  }
+const logout = () => {
+  localStorage.removeItem('user');
+};
 
-  static updateUser(user) {
-    console.log(user);
-    browserHistory.push('/pathToRedirect');
-    return axios.put(`${baseUrl}/api/users/${user.id}`, user);
-  }
-
-  static deleteUser(id) {
-    return axios.delete(`${baseUrl}/api/user/${id}`);
-  }
-}
-
-export default UsersAPI;
+export default {
+  register,
+  login,
+  logout,
+};
