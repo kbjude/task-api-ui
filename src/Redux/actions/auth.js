@@ -75,3 +75,10 @@ export const login = (username, password) => (dispatch) => AuthService.login(use
   },
 );
 
+export const logout = () => (dispatch) => {
+  AuthService.logout();
+
+  dispatch({
+    type: LOGOUT,
+  });
+};
