@@ -5,13 +5,13 @@ import { useDispatch, useSelector } from 'react-redux';
 // import store from '../Redux/store';
 // import fetchItems from '../Api/itemApi';
 import Items from '../components/Items';
-import { fetchItems } from '../Redux/actions/items';
+import { createItem } from '../Redux/actions/items';
 
 const ItemsContainer = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchItems());
+    dispatch(createItem());
   }, [dispatch]);
 
   const items = useSelector((state) => state.itemReducer);
