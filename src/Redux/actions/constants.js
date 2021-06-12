@@ -2,7 +2,10 @@ export const LOGIN = 'LOGIN';
 export const SIGNUP = 'SIGNUP';
 export const ERROR = 'ERROR';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
-export const LOGIN_FAILURE = 'LOGIN_FAILURE';
+export const LOGIN_FAIL = 'LOGIN_FAIL';
+export const LOGOUT = 'LOGIN';
+export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
+export const LOGOUT_FAILURE = 'LOGOUT_FAILURE';
 export const OTP_SUCCESS = 'OTP_SUCCESS';
 export const OTP_FAILURE = 'OTP_FAILURE';
 export const FETCH_OTP = 'FETCH_OTP';
@@ -54,6 +57,11 @@ export const GET_USERS_ERROR = 'GET_USERS_ERROR';
 export const CREATE_USERS_SUCCESS = 'CREATE_USERS_SUCCESS';
 export const CREATE_USERS_ERROR = 'CREATE_USERS_ERROR';
 export const CREATE_USER = 'CREATE_USER';
+
+export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
+export const REGISTER_FAIL = 'REGISTER_FAIL';
+export const REGISTER_USER = 'REGISTER_USER';
+
 export const UPDATE_USERS_SUCCESS = 'UPDATE_USERS_SUCCESS';
 export const UPDATE_USERS_ERROR = 'UPDATE_USERS_ERROR';
 export const UPDATE_USER = 'UPDATE_USER';

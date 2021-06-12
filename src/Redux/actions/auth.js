@@ -5,7 +5,7 @@ import {
   LOGIN_FAIL,
   LOGOUT,
   SET_MESSAGE,
-} from './types';
+} from './constants';
 
 import AuthService from '../../Api/auth/auth.service';
 
