@@ -18,8 +18,6 @@ const Items = (props) => {
     vdescription, 
     handleRegister, 
     successful,
-    vname,
-    vdescription,
   } = props;
 
   return (
@@ -31,7 +29,7 @@ const Items = (props) => {
           className="profile-img-card"
         />
 
-        <Form onSubmit={handleSubmit} ref={form}>
+        <Form onSubmit={handleRegister} ref={form}>
           {!successful && (
             <div>
               <div className="form-group">
@@ -42,29 +40,29 @@ const Items = (props) => {
                   name="name"
                   value={name}
                   onChange={onChangeName}
-                  validations={[required, name]}
+                  validations={[required, vname]}
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">Description</label>
                 <Input
                   type="text"
                   className="form-control"
-                  name="email"
-                  value={email}
-                  onChange={onChangeEmail}
-                  validations={[required, validEmail]}
+                  name="description"
+                  value={description}
+                  onChange={onChangeDescription}
+                  validations={[required, vdescription]}
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password">Id</label>
                 <Input
-                  type="password"
+                  type="id"
                   className="form-control"
-                  name="password"
-                  value={password}
+                  name="id"
+                  value={id}
                   onChange={onChangePassword}
                   validations={[required, vpassword]}
                 />
