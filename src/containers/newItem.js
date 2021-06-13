@@ -23,7 +23,6 @@ const ItemsContainer = () => {
 
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
-  const [id, setId] = useState('');
   const [loading, setLoading] = useState(false);
 
   const { message } = useSelector((state) => state.message);
