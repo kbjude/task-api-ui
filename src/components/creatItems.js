@@ -92,7 +92,14 @@ Items.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  path: PropTypes.string.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  onChangeName: PropTypes.func.isRequired,
+  onChangeDescription: PropTypes.func.isRequired,
+  required: PropTypes.func.isRequired,
+  vname: PropTypes.func.isRequired,
+  vdescription: PropTypes.func.isRequired,
+  handleRegister: PropTypes.func.isRequired,
+  successful: PropTypes.string.isRequired,
 };
 
 export default Items;
