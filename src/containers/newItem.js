@@ -1,10 +1,5 @@
 import React, { useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
-
-import Form from 'react-validation/build/form';
-import Input from 'react-validation/build/input';
-import CheckButton from 'react-validation/build/button';
 import { createItem } from '../Redux/actions/items';
 import Items from '../components/creatItems';
 
@@ -17,10 +12,31 @@ const required = (value) => {
     );
   }
 };
+
+const vname = (value) => {
+  if (value.length < 3 || value.length > 20) {
+    return (
+      <div className="alert alert-danger" role="alert">
+        The username must be between 3 and 20 characters.
+      </div>
+    );
+  }
+};
+
+const vdescription = (value) => {
+  if (value.length < 3 || value.length > 100) {
+    return (
+      <div className="alert alert-danger" role="alert">
+        The username must be between 3 and 100 characters.
+      </div>
+    );
+  }
+};
+
 const ItemsContainer = () => {
   const form = useRef();
   const checkBtn = useRef();
-
+  const [successful, setSuccessful] = useState(false);
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [loading, setLoading] = useState(false);
@@ -60,6 +76,24 @@ const ItemsContainer = () => {
     }
   };
 
+  const handleRegister = (e) => {
+    e.preventDefault();
+
+    setSuccessful(false);
+
+    form.current.validateAll();
+
+    if (checkBtn.current.context._errors.length === 0) {
+      dispatch(register(name, description))
+        .then(() => {
+          setSuccessful(true);
+        })
+        .catch(() => {
+          setSuccessful(false);
+        });
+    }
+  };
+
   const items = useSelector((state) => state.itemReducer);
 
   return (
@@ -74,6 +108,11 @@ const ItemsContainer = () => {
           onChangeName={onChangeName}
           onChangeDescription={onChangeDescription}
           handleSubmit={handleSubmit}
+          required={required}
+          vname={vname}
+          vdescription={vdescription}
+          handleRegister={handleRegister}
+          successful={successful}
         />
       ))}
     </>
