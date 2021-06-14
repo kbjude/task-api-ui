@@ -79,7 +79,7 @@ const Items = (props) => {
                   type="endTime"
                   className="form-control"
                   name="endTime"
-                  value={startTime}
+                  value={endTime}
                   onChange={onChangeEndTime}
                   validations={[required]}
                 />
@@ -118,6 +118,8 @@ Items.propTypes = {
   onChangeName: PropTypes.func.isRequired,
   onChangeDescription: PropTypes.func.isRequired,
   required: PropTypes.func.isRequired,
+  endTime: PropTypes.instanceOf(Date).isRequired,
+  startTime: PropTypes.instanceOf(Date).isRequired,
   vname: PropTypes.func.isRequired,
   vdescription: PropTypes.func.isRequired,
   onChangeStartTime: PropTypes.func.isRequired,
