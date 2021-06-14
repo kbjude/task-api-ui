@@ -13,6 +13,8 @@ const Items = (props) => {
     // handleSubmit,
     onChangeName,
     onChangeDescription,
+    onChangeStartTime,
+    onChangeEndTime,
     required,
     startTime,
     endTime,
@@ -56,6 +58,30 @@ const Items = (props) => {
                   value={description}
                   onChange={onChangeDescription}
                   validations={[required, vdescription]}
+                />
+              </div>
+
+              <div className="form-group">
+                End Date
+                <Input
+                  type="dateTime"
+                  className="form-control"
+                  name="startTime"
+                  value={startTime}
+                  onChange={onChangeStartTime}
+                  validations={[required]}
+                />
+              </div>
+
+              <div className="form-group">
+                End Date
+                <Input
+                  type="endTime"
+                  className="form-control"
+                  name="endTime"
+                  value={startTime}
+                  onChange={onChangeEndTime}
+                  validations={[required]}
                 />
               </div>
 
