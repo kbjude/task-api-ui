@@ -75,7 +75,7 @@ const ItemDetailsContainer = () => {
     form.current.validateAll();
 
     if (checkBtn.current.context._errors.length === 0) {
-      dispatch(createItem(name, description))
+      dispatch(createItem(name, description, startTime, endTime))
         .then(() => {
           // props.history.push('/profile');
           window.location.reload();
