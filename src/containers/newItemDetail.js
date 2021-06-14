@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { createItem } from '../Redux/actions/items';
-import Items from '../components/creatItems';
+import { createItemDetail } from '../Redux/actions/items';
+import ItemDetails from '../components/creatItemDetail';
 
 const required = (value) => {
   if (!value) {
@@ -33,12 +33,14 @@ const vdescription = (value) => {
   }
 };
 
-const ItemsContainer = () => {
+const ItemDetailsContainer = () => {
   const form = useRef();
   const checkBtn = useRef();
   const [successful, setSuccessful] = useState(false);
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
+  const [startTime, setStartTime] = useState('');
+  const [endTime, setEndTime] = useState('');
   const [loading, setLoading] = useState(false);
 
   const { message } = useSelector((state) => state.message);
@@ -53,6 +55,16 @@ const ItemsContainer = () => {
   const onChangeDescription = (e) => {
     const description = e.target.value;
     setDescription(description);
+  };
+
+  const onChangeStartTime = (e) => {
+    const startTime = e.target.value;
+    setStartTime(startTime);
+  };
+
+  const onChangeEndTime = (e) => {
+    const endTime = e.target.value;
+    setEndTime(endTime);
   };
 
   const handleSubmit = (e) => {
@@ -94,17 +106,19 @@ const ItemsContainer = () => {
     }
   };
 
-  const items = useSelector((state) => state.itemReducer);
+  const itemDetail = useSelector((state) => state.itemReducer);
 
   return (
     <>
-      {items.items && items.items.map((item) => (
-        <Items
-          key={item.id}
-          id={item.id}
-          name={item.title}
-          description={item.description}
-          path={`/items/${item.id}`}
+      {itemDetail.itemDetail && itemDetail.itemDetail.map((itemDetail) => (
+        <ItemDetails
+          key={itemDetail.id}
+          id={itemDetail.id}
+          name={itemDetail.title}
+          description={itemDetail.description}
+          startTime={itemDetail.startTime}
+          endTime={itemDetail.endTime}
+          path={`/items/${itemDetail.id}`}
           onChangeName={onChangeName}
           onChangeDescription={onChangeDescription}
           handleSubmit={handleSubmit}
@@ -114,14 +128,16 @@ const ItemsContainer = () => {
           handleRegister={handleRegister}
           successful={successful}
           message={message}
+          onChangeStartTime={onChangeStartTime}
+          onChangeEndTime={onChangeEndTime}
         />
       ))}
     </>
   );
 };
 
-ItemsContainer.propTypes = {
+ItemDetailsContainer.propTypes = {
 
 };
 
-export default ItemsContainer;
+export default ItemDetailsContainer;

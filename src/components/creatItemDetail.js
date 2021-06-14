@@ -14,6 +14,8 @@ const Items = (props) => {
     onChangeName,
     onChangeDescription,
     required,
+    startTime,
+    endTime,
     vname,
     vdescription,
     handleRegister,
