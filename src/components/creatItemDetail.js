@@ -90,7 +90,7 @@ const Items = (props) => {
                   type="submit"
                   className="btn btn-primary btn-block"
                 >
-                  Sign Up
+                  Submit
                 </button>
               </div>
             </div>
@@ -120,6 +120,8 @@ Items.propTypes = {
   required: PropTypes.func.isRequired,
   vname: PropTypes.func.isRequired,
   vdescription: PropTypes.func.isRequired,
+  onChangeStartTime: PropTypes.func.isRequired,
+  onChangeEndTime: PropTypes.func.isRequired,
   handleRegister: PropTypes.func.isRequired,
   successful: PropTypes.string.isRequired,
   message: PropTypes.string.isRequired,
