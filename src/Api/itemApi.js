@@ -3,7 +3,7 @@ import axios from 'axios';
 function getItems() {
   return axios.request({
     method: 'get',
-    url: 'http://fakestoreapi.com/products',
+    url: 'http://localhost:3000/items',
   });
 }
 export default getItems;
