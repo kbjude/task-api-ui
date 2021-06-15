@@ -8,7 +8,7 @@ function getItemDetails(id) {
 
   return axios.request({
     method: 'get',
-    url: `http://fakestoreapi.com/products/${id}`,
+    url: `http://localhost:3000/items/${id}`,
   });
 }
 export default getItemDetails;
