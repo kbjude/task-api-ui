@@ -26,3 +26,12 @@ export const itemDetailReducer1 = (state = {}, { type, payload }) => {
       return state;
   }
 };
+
+export const createItemsReducer = (state = {}, { type, payload }) => {
+  switch (type) {
+    case types.CREATE_ITEM:
+      return { ...state, ...payload };
+    default:
+      return state;
+  }
+};

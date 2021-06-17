@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import users from './user';
-import { itemReducer } from './item';
+import { itemReducer, createItemsReducer } from './item';
 import itemDetailReducer from './itemDetails';
 import message from './message';
 import auth from './auth';
@@ -11,6 +11,7 @@ const rootReducer = combineReducers({
   itemDetailReducer,
   auth,
   message,
+  createItemsReducer,
 });
 
 export default rootReducer;
