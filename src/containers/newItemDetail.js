@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { createItemDetail } from '../Redux/actions/items';
+import { createItemDetails } from '../Redux/actions/itemdetails';
 import ItemDetails from '../components/creatItemDetail';
 
 const required = (value) => {
@@ -75,7 +75,7 @@ const ItemDetailsContainer = () => {
     form.current.validateAll();
 
     if (checkBtn.current.context._errors.length === 0) {
-      dispatch(createItem(name, description, startTime, endTime))
+      dispatch(createItemDetails(name, description, startTime, endTime))
         .then(() => {
           // props.history.push('/profile');
           window.location.reload();
