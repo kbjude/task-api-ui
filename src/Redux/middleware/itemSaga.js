@@ -1,9 +1,8 @@
 import { put, takeLatest, call } from 'redux-saga/effects';
 import { GET_ITEMS, CREATE_ITEMS } from '../actions/constants';
 import getItems from '../../Api/itemApi';
-import { setItems } from '../actions/items';
+import { setItems, createItem } from '../actions/items';
 import createItems from '../../Api/creatItemApi';
-import { createItem } from '../actions/items';
 
 export function* handleGetItems() {
   try {
@@ -32,5 +31,5 @@ export function* watchSetItems() {
 }
 
 export function* watchCreateItems() {
-  yield takeLatest(CREATE_ITEMS, handleGetItems);
+  yield takeLatest(CREATE_ITEMS, handleCreateItems);
 }

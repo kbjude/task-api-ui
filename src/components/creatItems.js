@@ -7,15 +7,14 @@ import Input from 'react-validation/build/input';
 
 const Items = (props) => {
   const {
-    id,
     name,
     description,
     // handleSubmit,
     onChangeName,
     onChangeDescription,
-    required,
-    vname,
-    vdescription,
+    // required,
+    // vname,
+    // vdescription,
     handleRegister,
     successful,
     message,
@@ -41,7 +40,7 @@ const Items = (props) => {
                   name="name"
                   value={name}
                   onChange={onChangeName}
-                  validations={[required, vname]}
+                  // validations={[required, vname]}
                 />
               </div>
 
@@ -53,7 +52,7 @@ const Items = (props) => {
                   name="description"
                   value={description}
                   onChange={onChangeDescription}
-                  validations={[required, vdescription]}
+                  // validations={[required, vdescription]}
                 />
               </div>
 
@@ -62,7 +61,7 @@ const Items = (props) => {
                   type="submit"
                   className="btn btn-primary btn-block"
                 >
-                  Sign Up
+                  Submit
                 </button>
               </div>
             </div>
@@ -83,15 +82,14 @@ const Items = (props) => {
 };
 
 Items.propTypes = {
-  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   // handleSubmit: PropTypes.func.isRequired,
   onChangeName: PropTypes.func.isRequired,
   onChangeDescription: PropTypes.func.isRequired,
-  required: PropTypes.func.isRequired,
-  vname: PropTypes.func.isRequired,
-  vdescription: PropTypes.func.isRequired,
+  // required: PropTypes.func.isRequired,
+  // vname: PropTypes.func.isRequired,
+  // vdescription: PropTypes.func.isRequired,
   handleRegister: PropTypes.func.isRequired,
   successful: PropTypes.string.isRequired,
   message: PropTypes.string.isRequired,
