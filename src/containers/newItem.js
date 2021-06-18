@@ -27,8 +27,8 @@ const newItem = () => {
       <Item
         name={item.name}
         description={item.description}
-        onChange={handleChange}
-        onSubmit={handleSubmit}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
         path={`/items/${item.id}`}
       />
     </div>

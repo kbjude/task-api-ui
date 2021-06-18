@@ -9,13 +9,9 @@ const Items = (props) => {
   const {
     name,
     description,
-    // handleSubmit,
-    onChangeName,
+    handleSubmit,
+    handleChange,
     onChangeDescription,
-    // required,
-    // vname,
-    // vdescription,
-    handleRegister,
     successful,
     message,
   } = props;
@@ -29,7 +25,7 @@ const Items = (props) => {
           className="profile-img-card"
         />
 
-        <Form onSubmit={handleRegister} ref={form}>
+        <Form ref={form}>
           {!successful && (
             <div>
               <div className="form-group">
@@ -39,7 +35,7 @@ const Items = (props) => {
                   className="form-control"
                   name="name"
                   value={name}
-                  onChange={onChangeName}
+                  onChange={handleChange}
                   // validations={[required, vname]}
                 />
               </div>
@@ -60,6 +56,7 @@ const Items = (props) => {
                 <button
                   type="submit"
                   className="btn btn-primary btn-block"
+                  onSubmit={handleSubmit}
                 >
                   Submit
                 </button>
@@ -84,13 +81,9 @@ const Items = (props) => {
 Items.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  // handleSubmit: PropTypes.func.isRequired,
-  onChangeName: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
   onChangeDescription: PropTypes.func.isRequired,
-  // required: PropTypes.func.isRequired,
-  // vname: PropTypes.func.isRequired,
-  // vdescription: PropTypes.func.isRequired,
-  handleRegister: PropTypes.func.isRequired,
   successful: PropTypes.string.isRequired,
   message: PropTypes.string.isRequired,
 };
