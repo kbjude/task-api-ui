@@ -10,13 +10,26 @@ const newItem = () => {
     description: '',
   });
 
-  const handleChange = (e) => {
-    setItem({ ...item, name: e.target.value, date: new Date() });
+  const handleChangename = (e) => {
+    setItem({
+      ...item,
+      name: e.target.value,
+      date: new Date(),
+    });
+  };
+
+  const handleChangeDescription = (e) => {
+    setItem({
+      ...item,
+      description: e.target.value,
+      date: new Date(),
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(createItem(item));
+    console.log(item);
     setItem({
       name: '',
       description: '',
@@ -27,7 +40,8 @@ const newItem = () => {
       <Item
         name={item.name}
         description={item.description}
-        handleChange={handleChange}
+        handleChangename={handleChangename}
+        handleChangeDescription={handleChangeDescription}
         handleSubmit={handleSubmit}
         path={`/items/${item.id}`}
       />

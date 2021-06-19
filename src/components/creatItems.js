@@ -1,79 +1,61 @@
 import PropTypes from 'prop-types';
+import { TextField, Input, Button } from '@material-ui/core';
+
 // import { Redirect } from 'react-router-dom';
 
-import Form, { form } from 'react-validation/build/form';
-import Input from 'react-validation/build/input';
+// import Form, { form } from 'react-validation/build/form';
+// import Input from 'react-validation/build/input';
+// import TextArea from 'react-validation/build/textarea';
 
 const Items = (props) => {
   const {
     name,
     description,
     handleSubmit,
-    handleChange,
-    onChangeDescription,
-    successful,
-    message,
+    handleChangeDescription,
+    handleChangeName,
   } = props;
 
   return (
-    <div className="col-md-12">
-      <div className="card card-container">
-        <img
-          src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-          alt="profile-img"
-          className="profile-img-card"
-        />
-
-        <Form ref={form}>
-          {!successful && (
-            <div>
-              <div className="form-group">
-                Name
-                <Input
-                  type="text"
-                  className="form-control"
-                  name="name"
-                  value={name}
-                  onChange={handleChange}
-                  // validations={[required, vname]}
-                />
-              </div>
-
-              <div className="form-group">
-                Description
-                <Input
-                  type="text"
-                  className="form-control"
-                  name="description"
-                  value={description}
-                  onChange={onChangeDescription}
-                  // validations={[required, vdescription]}
-                />
-              </div>
-
-              <div className="form-group">
-                <button
-                  type="submit"
-                  className="btn btn-primary btn-block"
-                  onSubmit={handleSubmit}
-                >
-                  Submit
-                </button>
-              </div>
-            </div>
-          )}
-
-          {message && (
+    <>
+      <form noValidate autoComplete="off" onSubmit={handleSubmit}>
+        <div className="col-md-12">
+          <div className="card card-container">
             <div className="form-group">
-              <div className={successful ? 'alert alert-success' : 'alert alert-danger'} role="alert">
-                {message}
-              </div>
+              Name
+              <Input
+                type="text"
+                className="form-control"
+                name="name"
+                value={name}
+                onChange={handleChangeName}
+              />
             </div>
-          )}
-          {/* <CheckButton style={{ display: "none" }} ref={checkBtn} /> */}
-        </Form>
-      </div>
-    </div>
+
+            <div className="form-group">
+              Description
+              <TextField
+                type="text"
+                className="form-control"
+                name="description"
+                value={description}
+                onChange={handleChangeDescription}
+              />
+            </div>
+
+            <div className="form-group">
+              <Button
+                type="submit"
+                className="btn btn-primary btn-block"
+                onSubmit={handleSubmit}
+              >
+                Submit
+              </Button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </>
   );
 };
 
@@ -81,10 +63,8 @@ Items.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   handleSubmit: PropTypes.func.isRequired,
-  handleChange: PropTypes.func.isRequired,
-  onChangeDescription: PropTypes.func.isRequired,
-  successful: PropTypes.string.isRequired,
-  message: PropTypes.string.isRequired,
+  handleChangeDescription: PropTypes.func.isRequired,
+  handleChangeName: PropTypes.func.isRequired,
 };
 
 export default Items;

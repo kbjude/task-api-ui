@@ -19,6 +19,7 @@ export function* handleCreateItems() {
   try {
     const response = yield call(createItem);
     const { data } = response;
+    console.log(data);
     yield put(createItems(data));
     console.log(data);
   } catch (error) {

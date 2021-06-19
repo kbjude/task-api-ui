@@ -41,8 +41,8 @@ export const fetchItemsFailure = (error) => ({
   error,
 });
 
-export function createItem(item) {
-  return { type: types.CREATE_ITEM, item };
+export function createItem(items) {
+  return { type: types.CREATE_ITEM, items };
 }
 
 export const createItemSuccess = (response) => ({
