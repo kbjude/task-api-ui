@@ -18,6 +18,7 @@ export function* handleGetItems() {
 export function* handleCreateItems() {
   try {
     const response = yield call(createItem);
+    console.log(response);
     const { data } = response;
     console.log(data);
     yield put(createItems(data));
@@ -32,5 +33,6 @@ export function* watchSetItems() {
 }
 
 export function* watchCreateItems() {
+  console.log(watchCreateItems);
   yield takeLatest(CREATE_ITEMS, handleCreateItems);
 }

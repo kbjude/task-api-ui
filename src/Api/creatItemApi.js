@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 function createItems() {
-  return axios.request({
+  return axios.getState({
     method: 'post',
     url: 'http://localhost:3000/items',
   });

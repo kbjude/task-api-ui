@@ -27,10 +27,10 @@ export const itemDetailReducer1 = (state = {}, { type, payload }) => {
   }
 };
 
-export const createItemsReducer = (state = {}, { type, payload }) => {
+export const createItemsReducer = (state = {}, { type, item }) => {
   switch (type) {
     case types.CREATE_ITEM:
-      return { ...state, ...payload };
+      return { ...state, ...item };
     default:
       return state;
   }

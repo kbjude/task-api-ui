@@ -10,7 +10,7 @@ const newItem = () => {
     description: '',
   });
 
-  const handleChangename = (e) => {
+  const handleChangeName = (e) => {
     setItem({
       ...item,
       name: e.target.value,
@@ -40,7 +40,7 @@ const newItem = () => {
       <Item
         name={item.name}
         description={item.description}
-        handleChangename={handleChangename}
+        handleChangeName={handleChangeName}
         handleChangeDescription={handleChangeDescription}
         handleSubmit={handleSubmit}
         path={`/items/${item.id}`}
